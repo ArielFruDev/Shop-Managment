@@ -10,7 +10,7 @@ const PurchaseCustomerDetails = ({date, customerID}) => {
     const [isAddButtonClicked, setIsAddButtonClicked] = useState(false)
 
   return (
-    <div style={{border: '3px solid green'}}>
+    <div style={{border: '3px solid green', margin: '20px', padding: '7px'}}>
             <strong>Name:</strong> <Link to={'/products/editCustomer'} state={{customer: customer}}>{`${customer.firstName} ${customer.lastName}`}</Link><br />
             <strong>Date:</strong> {date} <br />
             <button onClick={() => {setIsAddButtonClicked(!isAddButtonClicked)}}>Add Product To This Customer</button> <br />

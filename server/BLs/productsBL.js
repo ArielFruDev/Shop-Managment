@@ -26,5 +26,4 @@ const remove = async(id) => {
     return products
 }
 
-
 module.exports = {getAll, getById, create, update, remove}

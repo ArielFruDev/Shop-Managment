@@ -6,6 +6,12 @@ const getAllCustomers = async() => {
     return customers
 }
 
+const createNewCustomer = async(obj) => {
+    const resp = await axios.post('http://localhost:8000/customers', obj)
+    const customers = resp.data
+    return customers
+}
+
 const updateCustomer = async(customerId, obj) => {
     // console.log(customerId);
     // console.log(obj);
@@ -21,6 +27,6 @@ const deleteCustomer = async(customerId) => {
     return customers
 }
 
-export {getAllCustomers, updateCustomer, deleteCustomer}
+export {getAllCustomers, createNewCustomer, updateCustomer, deleteCustomer}
 
 //http://localhost:8000/customers/6366e35e15efda51ae0a8a7e

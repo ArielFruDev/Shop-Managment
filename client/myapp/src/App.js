@@ -16,6 +16,8 @@ import SelectorTester from './pages/selectorTester';
 import DateFilter from './pages/dateFilter';
 import ProductFilter from './pages/productFilter';
 import CustomerFilter from './pages/customerFilter';
+import AddNewProduct from './pages/addNewProduct';
+import AddNewCustomer from './pages/addNewCustomer';
 
 function App() {
   const dispatch = useDispatch()
@@ -59,6 +61,8 @@ function App() {
             <Route path='/purchases/dateFilter' element={<DateFilter/>}/>
           </Route>
         </Route>
+        <Route path='/products/addNewProduct' element={<AddNewProduct/>}/>
+        <Route path='/customers/addNewCustomer' element={<AddNewCustomer/>}/>
         <Route path='/products/editProduct' element={<EditProduct/>}/>
         <Route path='/products/editCustomer' element={<EditCustomer/>}/>
         </Routes>

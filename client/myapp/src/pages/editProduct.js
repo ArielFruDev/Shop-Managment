@@ -55,7 +55,7 @@ const EditProduct = () => {
         <input type="text"  value={quantity} onChange={(event) => {setQuantity(event.target.value)}}/> <br />
         <button onClick={updateProduct}>Update</button><br />
         <button onClick={deleteProduct}>Delete This Product</button><br />
-        <button onClick={() => {navigate('/products')}}>Cancel</button>
+        <button onClick={() => {navigate(-1)}}>Cancel</button>
         <h3>Customers who bought this product:</h3>
         {uniqeCustomersIds.map(customer => {
           return <Customer key={customer.customerID} customerID={customer.customerID}/>

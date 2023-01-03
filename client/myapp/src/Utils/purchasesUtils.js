@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { reduceQuantity } from './productsUtils'
 
 const getAllPurchases = async() => {
     const resp = await axios.get('http://localhost:8000/purchases')
@@ -9,7 +10,8 @@ const getAllPurchases = async() => {
 const addPurchase = async(obj) => {
     const resp = await axios.post('http://localhost:8000/purchases', obj)
     const purchases = resp.data
-    return purchases
+    const products = await reduceQuantity(obj.productID)
+    return {purchases: purchases, products: products}
 }
 
 const deleteByProductId = async(productId) => {

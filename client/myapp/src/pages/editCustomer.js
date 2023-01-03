@@ -47,7 +47,7 @@ const EditCustomer = () => {
           <input type="text"  value={city} onChange={(event) => {setCity(event.target.value)}}/> <br />
           <button onClick={update}>Update</button><br />
           <button onClick={remove}>Delete This Customer</button><br />   
-          <button onClick={() => {navigate('/products')}}>Cancel</button>     
+          <button onClick={() => {navigate(-1)}}>Cancel</button>     
       </div>
     )
   }

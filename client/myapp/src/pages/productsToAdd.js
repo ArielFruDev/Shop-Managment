@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { addPurchase } from '../Utils/purchasesUtils'
-import { setAllPurchases } from '../Redux/actions'
+import { setAllProducts, setAllPurchases } from '../Redux/actions'
 
 const ProductsToAdd = ({customerID}) => {
     console.log('productsToAdd');
     const dispatch = useDispatch()
     const products = useSelector(state => state.products)
-
     const date = sessionStorage.getItem("date")
     const [selectedProduct, setSelectedProduct] = useState({
         customerID: customerID,
@@ -29,8 +28,9 @@ const ProductsToAdd = ({customerID}) => {
         </select> <br />
 
         <button onClick={async() => {
-            const purchases = await addPurchase(selectedProduct)
-            dispatch(setAllPurchases(purchases))
+            const resp = await addPurchase(selectedProduct)
+            dispatch(setAllPurchases(resp.purchases))
+            dispatch(setAllProducts(resp.products))
         }}>Save</button>
     </div>
   )
